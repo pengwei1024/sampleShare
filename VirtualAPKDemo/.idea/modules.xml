@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/VirtualAPKDemo.iml" filepath="$PROJECT_DIR$/VirtualAPKDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hipluginlib/hipluginlib.iml" filepath="$PROJECT_DIR$/hipluginlib/hipluginlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pluginDemo/pluginDemo.iml" filepath="$PROJECT_DIR$/pluginDemo/pluginDemo.iml" />
+    </modules>
+  </component>
+</project>
