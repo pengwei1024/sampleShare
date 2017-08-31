@@ -7,9 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "Masonry/Masonry.h"
-#import <SVProgressHUD/SVProgressHUD.h>
-
 
 @interface MainViewController ()
 
@@ -20,9 +17,11 @@
     UIActivityIndicatorView *activityIndicator;
 }
 
+@synthesize url;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     CGRect bounds = self.view.bounds;
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, bounds.size.width,
             bounds.size.height - 25)];
@@ -30,7 +29,10 @@
     [webView setBackgroundColor:[UIColor clearColor]];
     [self createLoadingView];
     [self.view addSubview:webView];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.apkfuns.com"]];
+    if (!url) {
+        url = @"http://www.apkfuns.com";
+    }
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [webView loadRequest:request];
     webView.delegate = self;
     [self.view bringSubviewToFront:loadView];
@@ -51,7 +53,7 @@
 
 //    NSLog(@"%f, %f", loadView.center.x, loadView.center.y);
     // 中心点是相对于父类
-    [activityIndicator setCenter:CGPointMake(loadView.bounds.size.width/2, loadView.bounds.size.height/2)];
+    [activityIndicator setCenter:CGPointMake(loadView.bounds.size.width / 2, loadView.bounds.size.height / 2)];
     [activityIndicator startAnimating];
 }
 
@@ -70,13 +72,13 @@
 
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    self.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     [activityIndicator stopAnimating];
     loadView.hidden = YES;
     NSLog(@"网页加载完成, url= %@", webView.request.URL.absoluteString);
     NSString *inject = @"var imgs = document.getElementsByTagName('img');for(var i=0;i<imgs.length;i++){"
             "imgs[i].onclick=function(){location.href='bridge://' + this.src;}}";
     [webView stringByEvaluatingJavaScriptFromString:inject];
-    [SVProgressHUD showSuccessWithStatus:@"Hello, world!" maskType:SVProgressHUDMaskTypeBlack];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {

@@ -4,6 +4,9 @@
 //
 
 #import "ActionViewController.h"
+#import "View+MASAdditions.h"
+#import "MainViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface ActionViewController ()
 
@@ -12,8 +15,37 @@
 @implementation ActionViewController {
 
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUI];
+}
+
+- (void)setupUI {
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Detail"
+      style:UIBarButtonItemStylePlain target:self action:@selector(gotoPage)];
+    self.navigationItem.rightBarButtonItem = buttonItem;
+
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"Hello" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(onHelloButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make){
+        make.width.equalTo(@60.0);
+        make.height.equalTo(@40.0);
+        make.center.equalTo(self.view);
+    }];
+}
+
+-(void) gotoPage {
+    MainViewController *mainViewController = [[MainViewController alloc] init];
+    mainViewController.hidesBottomBarWhenPushed = YES;
+    mainViewController.url = @"http://www.baidu.com";
+    [self.navigationController pushViewController:mainViewController animated:YES];
+}
+
+-(void) onHelloButtonClicked:(id) sender {
+    [SVProgressHUD showSuccessWithStatus:@"Hello, world!" maskType:SVProgressHUDMaskTypeBlack];
 }
 
 @end

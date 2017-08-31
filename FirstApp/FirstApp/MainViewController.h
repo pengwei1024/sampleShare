@@ -11,5 +11,6 @@
 
 @interface MainViewController : UIViewController<UIWebViewDelegate>
 
+@property NSString *url;
 
 @end
