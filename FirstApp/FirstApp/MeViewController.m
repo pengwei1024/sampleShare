@@ -4,11 +4,12 @@
 //
 
 #import "MeViewController.h"
+#import "DSWebViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-NSString * const MeViewControllerIdentifier = @"STExploreCellIdentifier";
+NSString *const MeViewControllerIdentifier = @"STExploreCellIdentifier";
 
-@interface MeViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface MeViewController () <UITableViewDataSource, UITableViewDelegate>
 @end
 
 @implementation MeViewController {
@@ -26,7 +27,13 @@ NSString * const MeViewControllerIdentifier = @"STExploreCellIdentifier";
 }
 
 - (void)tableView:(UITableView *)tableView1 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"选中:%i", indexPath.item] maskType:SVProgressHUDMaskTypeBlack];
+    if (indexPath.item == 0) {
+        DSWebViewController *controller = [[DSWebViewController alloc] init];
+        controller.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:controller animated:YES];
+    } else {
+        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"选中:%i", indexPath.item] maskType:SVProgressHUDMaskTypeBlack];
+    }
 }
 
 
@@ -35,8 +42,12 @@ NSString * const MeViewControllerIdentifier = @"STExploreCellIdentifier";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:MeViewControllerIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"Hi-%i", indexPath.item];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MeViewControllerIdentifier forIndexPath:indexPath];
+    if (indexPath.item == 0) {
+        cell.textLabel.text = @"DSBridge 测试";
+    } else {
+        cell.textLabel.text = [NSString stringWithFormat:@"Hi-%i", indexPath.item];
+    }
     cell.layer.shouldRasterize = YES;
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     return cell;

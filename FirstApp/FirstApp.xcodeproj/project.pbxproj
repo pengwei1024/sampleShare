@@ -14,15 +14,18 @@
 		D752142BAB14CEECFCCD321A /* FirstAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D75215A65F54E214336A79D4 /* FirstAppUITests.m */; };
 		D752149560837A117977BB54 /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D75214A524BC2EE8859DF5CA /* CommonUtils.m */; };
 		D75214D8F759A3667749EA32 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D75217E6A7FE6CAE76D395E4 /* Podfile */; };
+		D752158AB8DB26B53E03FA78 /* JsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D7521F0E546536EEA9A5A5CE /* JsObject.m */; };
 		D752162C1DB77E1660C8E675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7521E0FD6D18F43EBCCE397 /* Assets.xcassets */; };
 		D75216A876F1A454FC4312A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7521480910C28784D4F8467 /* AppDelegate.m */; };
 		D7521821C732315491B8D92E /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D752105E555C1A75E010338C /* ActionViewController.m */; };
+		D752195771F1F15D1EB59FEB /* dsbridge.html in Resources */ = {isa = PBXBuildFile; fileRef = D752117A675CD45D6C44B144 /* dsbridge.html */; };
 		D7521A413A130C515FEED5DC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D752176570A930C2B85427CF /* MainViewController.m */; };
 		D7521B776845BB18CEAA8D4A /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7521BE5FEA74782AB86F9D3 /* MeViewController.m */; };
 		D7521BF23568FD26EDE08595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7521C147D51D58E7A1D6858 /* LaunchScreen.storyboard */; };
 		D7521C6E552F09ADE8279517 /* FirstAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7521056ABFFA7DD4860E501 /* FirstAppTests.m */; };
 		D7521D13A709034A01C45DC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D752155F84084C0812CACB90 /* main.m */; };
 		D7521D30EF5FD58DD087AEE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7521A951F5BA4697C90ADE6 /* Main.storyboard */; };
+		D7521F015CBD1BA4B326A0C0 /* DSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7521941A429A37E48642683 /* DSWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +50,9 @@
 		9CBE233341DAD3B1E49FA552 /* Pods-FirstApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstApp/Pods-FirstApp.release.xcconfig"; sourceTree = "<group>"; };
 		D7521056ABFFA7DD4860E501 /* FirstAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstAppTests.m; sourceTree = "<group>"; };
 		D752105E555C1A75E010338C /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
+		D752117A675CD45D6C44B144 /* dsbridge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = dsbridge.html; sourceTree = "<group>"; };
 		D75211E46C19D08E2757A965 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		D75212F0FD5A998BD781474C /* JsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsObject.h; sourceTree = "<group>"; };
 		D75213F1105F9B930FE4327E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		D7521480910C28784D4F8467 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D75214A524BC2EE8859DF5CA /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
@@ -58,6 +63,8 @@
 		D75217E6A7FE6CAE76D395E4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D75217F927CC389924352158 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D752191B36DEC66A0AE924E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7521941A429A37E48642683 /* DSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSWebViewController.m; sourceTree = "<group>"; };
+		D7521A02F1E4C5D741954BF6 /* DSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSWebViewController.h; sourceTree = "<group>"; };
 		D7521A0EA8A6CD6B2C08A9D5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		D7521A61F3421EC8BC8754F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7521BE5FEA74782AB86F9D3 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		D7521E0FD6D18F43EBCCE397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7521E232FF152FDD019C6DC /* FirstAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7521EF45361F7F066BB35FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		D7521F0E546536EEA9A5A5CE /* JsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsObject.m; sourceTree = "<group>"; };
 		D7521F95F2870A4699C5A273 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		D7521F99A231EDD7A77313DE /* Common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Common; sourceTree = "<group>"; };
 		D7521FA14A0E4F5259B8B342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -169,6 +177,8 @@
 				D7521C4EE2972901C6083EFF /* Common */,
 				D7521BE5FEA74782AB86F9D3 /* MeViewController.m */,
 				D7521D9CAE8896B622616186 /* MeViewController.h */,
+				D7521941A429A37E48642683 /* DSWebViewController.m */,
+				D7521A02F1E4C5D741954BF6 /* DSWebViewController.h */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -187,6 +197,8 @@
 			children = (
 				D75214A524BC2EE8859DF5CA /* CommonUtils.m */,
 				D7521C29371BCD5235BFB4FC /* CommonUtils.h */,
+				D7521F0E546536EEA9A5A5CE /* JsObject.m */,
+				D75212F0FD5A998BD781474C /* JsObject.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -195,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				D752155F84084C0812CACB90 /* main.m */,
+				D752117A675CD45D6C44B144 /* dsbridge.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -305,6 +318,7 @@
 				D75214D8F759A3667749EA32 /* Podfile in Resources */,
 				D75214089DE647D7A23DB7BF /* Common in Resources */,
 				D752108C4771674E2E8E9904 /* .gitignore in Resources */,
+				D752195771F1F15D1EB59FEB /* dsbridge.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +407,8 @@
 				D752149560837A117977BB54 /* CommonUtils.m in Sources */,
 				D7521B776845BB18CEAA8D4A /* MeViewController.m in Sources */,
 				D75210B1EB088411C980ACFD /* README.md in Sources */,
+				D7521F015CBD1BA4B326A0C0 /* DSWebViewController.m in Sources */,
+				D752158AB8DB26B53E03FA78 /* JsObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
