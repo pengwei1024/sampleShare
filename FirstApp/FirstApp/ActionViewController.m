@@ -16,6 +16,8 @@
 
 }
 
+// http://www.cnblogs.com/wendingding/p/3761730.html
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
@@ -26,15 +28,18 @@
       style:UIBarButtonItemStylePlain target:self action:@selector(gotoPage)];
     self.navigationItem.rightBarButtonItem = buttonItem;
 
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setTitle:@"Hello" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(onHelloButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    [button mas_makeConstraints:^(MASConstraintMaker *make){
-        make.width.equalTo(@60.0);
-        make.height.equalTo(@40.0);
-        make.center.equalTo(self.view);
-    }];
+    for (int i = 0; i < 5; ++i) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        [button setTitle:@"Hello" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(onHelloButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        [button mas_makeConstraints:^(MASConstraintMaker *make){
+            make.width.equalTo(@60.0);
+            make.height.equalTo(@40.0);
+            make.topMargin.equalTo(@10);
+//            make.center.equalTo(self.view);
+        }];
+    }
 }
 
 -(void) gotoPage {

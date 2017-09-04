@@ -5,6 +5,7 @@
 
 #import "DSWebViewController.h"
 #import "dsbridge.h"
+#import "NSObject+runtime.h"
 
 @interface DSWebViewController ()<JSBWebEventDelegateProtocol> {
 
@@ -25,6 +26,7 @@
     CGRect bounds=self.view.bounds;
     webview=[[DUIwebview alloc] initWithFrame:CGRectMake(0, 0, bounds.size.width, bounds.size.height-25)];
     jsApi=[[JsObject alloc] init];
+    NSLog(@"AllMethod = %@", [JsObject getAllMethods]);
     webview.WebEventDelegate = self;
     webview.JavascriptInterfaceObject = jsApi;
     [self.view addSubview:webview];

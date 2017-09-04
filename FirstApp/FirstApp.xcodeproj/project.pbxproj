@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		537C349B19CBCD9DCBB6D8BF /* libPods-FirstApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4805DDA7F0873BC30DD131 /* libPods-FirstApp.a */; };
+		D3023E9E1F5B0567002C73D5 /* XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3023E9D1F5B0567002C73D5 /* XibViewController.xib */; };
+		D3023EA11F5B0CB1002C73D5 /* XibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3023EA01F5B0CB1002C73D5 /* XibViewController.m */; };
 		D752108C4771674E2E8E9904 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D7521A0EA8A6CD6B2C08A9D5 /* .gitignore */; };
 		D75210B1EB088411C980ACFD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D75217F927CC389924352158 /* README.md */; };
 		D75214089DE647D7A23DB7BF /* Common in Resources */ = {isa = PBXBuildFile; fileRef = D7521F99A231EDD7A77313DE /* Common */; };
@@ -18,6 +20,7 @@
 		D752162C1DB77E1660C8E675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7521E0FD6D18F43EBCCE397 /* Assets.xcassets */; };
 		D75216A876F1A454FC4312A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7521480910C28784D4F8467 /* AppDelegate.m */; };
 		D7521821C732315491B8D92E /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D752105E555C1A75E010338C /* ActionViewController.m */; };
+		D752193B38B2CB2294653E22 /* NSObject+runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = D7521C709E9853432AA7310D /* NSObject+runtime.m */; };
 		D752195771F1F15D1EB59FEB /* dsbridge.html in Resources */ = {isa = PBXBuildFile; fileRef = D752117A675CD45D6C44B144 /* dsbridge.html */; };
 		D7521A413A130C515FEED5DC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D752176570A930C2B85427CF /* MainViewController.m */; };
 		D7521B776845BB18CEAA8D4A /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7521BE5FEA74782AB86F9D3 /* MeViewController.m */; };
@@ -48,6 +51,9 @@
 /* Begin PBXFileReference section */
 		8C4805DDA7F0873BC30DD131 /* libPods-FirstApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirstApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CBE233341DAD3B1E49FA552 /* Pods-FirstApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstApp/Pods-FirstApp.release.xcconfig"; sourceTree = "<group>"; };
+		D3023E9D1F5B0567002C73D5 /* XibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibViewController.xib; sourceTree = "<group>"; };
+		D3023E9F1F5B0CB1002C73D5 /* XibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XibViewController.h; sourceTree = "<group>"; };
+		D3023EA01F5B0CB1002C73D5 /* XibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XibViewController.m; sourceTree = "<group>"; };
 		D7521056ABFFA7DD4860E501 /* FirstAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstAppTests.m; sourceTree = "<group>"; };
 		D752105E555C1A75E010338C /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
 		D752117A675CD45D6C44B144 /* dsbridge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = dsbridge.html; sourceTree = "<group>"; };
@@ -69,7 +75,9 @@
 		D7521A61F3421EC8BC8754F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7521BE5FEA74782AB86F9D3 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		D7521C12276FC0530DB01BDB /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7521C1737C978FA654F2E7E /* NSObject+runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+runtime.h"; sourceTree = "<group>"; };
 		D7521C29371BCD5235BFB4FC /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		D7521C709E9853432AA7310D /* NSObject+runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+runtime.m"; sourceTree = "<group>"; };
 		D7521D0D4F6595163CF9DADF /* FirstAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7521D9CAE8896B622616186 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		D7521E0FD6D18F43EBCCE397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +187,9 @@
 				D7521D9CAE8896B622616186 /* MeViewController.h */,
 				D7521941A429A37E48642683 /* DSWebViewController.m */,
 				D7521A02F1E4C5D741954BF6 /* DSWebViewController.h */,
+				D3023E9D1F5B0567002C73D5 /* XibViewController.xib */,
+				D3023E9F1F5B0CB1002C73D5 /* XibViewController.h */,
+				D3023EA01F5B0CB1002C73D5 /* XibViewController.m */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
@@ -199,6 +210,8 @@
 				D7521C29371BCD5235BFB4FC /* CommonUtils.h */,
 				D7521F0E546536EEA9A5A5CE /* JsObject.m */,
 				D75212F0FD5A998BD781474C /* JsObject.h */,
+				D7521C709E9853432AA7310D /* NSObject+runtime.m */,
+				D7521C1737C978FA654F2E7E /* NSObject+runtime.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -289,8 +302,6 @@
 			mainGroup = D75213812ED4B1D38B639B08;
 			productRefGroup = D752165613821F31A7E17D00 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				D75217CD76DC0650DC31E70D /* FirstApp */,
@@ -317,6 +328,7 @@
 				D7521D30EF5FD58DD087AEE8 /* Main.storyboard in Resources */,
 				D75214D8F759A3667749EA32 /* Podfile in Resources */,
 				D75214089DE647D7A23DB7BF /* Common in Resources */,
+				D3023E9E1F5B0567002C73D5 /* XibViewController.xib in Resources */,
 				D752108C4771674E2E8E9904 /* .gitignore in Resources */,
 				D752195771F1F15D1EB59FEB /* dsbridge.html in Resources */,
 			);
@@ -401,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7521D13A709034A01C45DC9 /* main.m in Sources */,
+				D3023EA11F5B0CB1002C73D5 /* XibViewController.m in Sources */,
 				D75216A876F1A454FC4312A7 /* AppDelegate.m in Sources */,
 				D7521A413A130C515FEED5DC /* MainViewController.m in Sources */,
 				D7521821C732315491B8D92E /* ActionViewController.m in Sources */,
@@ -409,6 +422,7 @@
 				D75210B1EB088411C980ACFD /* README.md in Sources */,
 				D7521F015CBD1BA4B326A0C0 /* DSWebViewController.m in Sources */,
 				D752158AB8DB26B53E03FA78 /* JsObject.m in Sources */,
+				D752193B38B2CB2294653E22 /* NSObject+runtime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

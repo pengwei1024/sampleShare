@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface XibViewController : NSObject
+@interface XibViewController : UIViewController
 
 @end

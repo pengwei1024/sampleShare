@@ -6,7 +6,6 @@
 #import "JsObject.h"
 #import <AFNetworking/AFNetworking.h>
 
-
 @implementation JsObject {
 
 }
@@ -31,10 +30,15 @@
     [manger POST:urlstr parameters:param progress:nil success:^(NSURLSessionDataTask *_Nonnull task, id _Nullable responseObject) {
         NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         handler(str, YES);
-    } failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
+    }    failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
         handler(@"请求失败", YES);
     }];
     return nil;
 }
+
+- (void)getString:(NSInteger *)title :(NSNumber *)xx {
+
+}
+
 
 @end

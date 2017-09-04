@@ -15,6 +15,9 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - dsBridge (2.0.2)
+  - FMDB (2.6):
+    - FMDB/standard (= 2.6)
+  - FMDB/standard (2.6)
   - Masonry (0.6.3)
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
@@ -24,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 3.0.4)
   - dsBridge (= 2.0.2)
+  - FMDB (= 2.6)
   - Masonry (= 0.6.3)
   - SDWebImage (~> 4.0)
   - SVProgressHUD (= 1.1.3)
@@ -31,10 +35,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   dsBridge: d312c027195a5b056b787d986821e6f8915863ce
+  FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
-PODFILE CHECKSUM: 83ac6b5c87a327d1230af0700ffd240c5bfbb8ac
+PODFILE CHECKSUM: b3692b980bfb5efb9d96033fc6c686b32e573cad
 
 COCOAPODS: 1.0.1

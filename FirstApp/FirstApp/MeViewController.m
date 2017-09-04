@@ -5,6 +5,7 @@
 
 #import "MeViewController.h"
 #import "DSWebViewController.h"
+#import "XibViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
 NSString *const MeViewControllerIdentifier = @"STExploreCellIdentifier";
@@ -31,8 +32,12 @@ NSString *const MeViewControllerIdentifier = @"STExploreCellIdentifier";
         DSWebViewController *controller = [[DSWebViewController alloc] init];
         controller.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:controller animated:YES];
+    } else if(indexPath.item == 1) {
+        XibViewController *controller = [[XibViewController alloc] init];
+        controller.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:controller animated:YES];
     } else {
-        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"选中:%i", indexPath.item] maskType:SVProgressHUDMaskTypeBlack];
+        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"选中:%li", indexPath.item] maskType:SVProgressHUDMaskTypeBlack];
     }
 }
 
@@ -43,10 +48,16 @@ NSString *const MeViewControllerIdentifier = @"STExploreCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MeViewControllerIdentifier forIndexPath:indexPath];
-    if (indexPath.item == 0) {
-        cell.textLabel.text = @"DSBridge 测试";
-    } else {
-        cell.textLabel.text = [NSString stringWithFormat:@"Hi-%i", indexPath.item];
+    switch (indexPath.item) {
+        case 0:
+            cell.textLabel.text = @"DSBridge 测试";
+            break;
+        case 1:
+            cell.textLabel.text = @"Xib View";
+            break;
+        default:
+            cell.textLabel.text = [NSString stringWithFormat:@"Hi-%li", indexPath.item];
+            break;
     }
     cell.layer.shouldRasterize = YES;
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
