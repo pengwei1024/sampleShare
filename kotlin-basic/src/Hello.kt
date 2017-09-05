@@ -9,6 +9,20 @@ fun main(args: Array<String>) {
         print(i)
     }*/
 
+//    val students: Array<String> = arrayOf("Clock", "D_clock", "技术视界")
+//    for ((index, student) in students.withIndex()) {
+//        println("the element at $index is $student")
+//    }
+
+    { x: Int, y: Int ->
+        println("${x + y}")
+    }(1, 3)
+
+    fun get(x: Int, y: Int) {
+        println("${x + y}")
+    }
+    get(1, 3)
+
 
     val fruits = listOf("apple", "banana", "kiwi")
 
