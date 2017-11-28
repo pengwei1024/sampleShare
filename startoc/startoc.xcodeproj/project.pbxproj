@@ -27,7 +27,10 @@
 		1D85532505547C9EB1E57E45 /* log.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log.txt; sourceTree = "<group>"; };
 		1D85554668F81163E6E7C785 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
 		1D85558991D1929F08C0984F /* startoc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = startoc; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8555CFD0BAA994C3A0F77F /* Reatangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reatangle.h; sourceTree = "<group>"; };
 		1D8557227F6169F23D9CF9E3 /* ClassBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBase.h; sourceTree = "<group>"; };
+		1D855A686093E316F067FA2D /* ExtendDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendDemo.h; sourceTree = "<group>"; };
+		1D855CB1FCA5F1E9EBC176E4 /* XYPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPoint.h; sourceTree = "<group>"; };
 		1D855CBEE62B6ED890671127 /* ClassBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBase.m; sourceTree = "<group>"; };
 		1D855D4733817DE60B1216A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1D855D791657F33B45A1FFB1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
@@ -71,6 +74,9 @@
 				1D85554668F81163E6E7C785 /* Calculator.h */,
 				1D855CBEE62B6ED890671127 /* ClassBase.m */,
 				1D8557227F6169F23D9CF9E3 /* ClassBase.h */,
+				1D855A686093E316F067FA2D /* ExtendDemo.h */,
+				1D8555CFD0BAA994C3A0F77F /* Reatangle.h */,
+				1D855CB1FCA5F1E9EBC176E4 /* XYPoint.h */,
 			);
 			path = startoc;
 			sourceTree = "<group>";
