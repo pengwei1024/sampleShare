@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>DSBridge Test</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul > li {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #ccc;
+            padding: 0.7rem 0;
+            margin-top: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>testSync</li>
+    <li>console log</li>
+    <li>AsyncRequest</li>
+</ul>
+<script type="text/javascript">
+    var bridge = getJsBridge();
+    var ul = document.getElementsByTagName("ul")[0];
+    var list = ul.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+        list[i].index = i;
+        list[i].onclick = function () {
+            switch (this.index) {
+                case 0:
+                    alert(bridge.call("testSync", {msg: "testMsg"}));
+                    break;
+                case 1:
+                    bridge.call("console", {log: "Hello World"});
+                    break;
+                case 2:
+                    bridge.call("testAsync", {msg: "testAsync"}, function (v) {
+                        alert('result= ' + v)
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

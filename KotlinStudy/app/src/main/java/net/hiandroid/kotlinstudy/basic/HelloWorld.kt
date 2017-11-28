@@ -19,6 +19,7 @@ class HelloWorld : AppCompatActivity() {
         textView.setOnClickListener {
             Log.d("tag", "click")
         }
+
         toast("1234")
     }
 
