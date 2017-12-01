@@ -10,6 +10,8 @@
 #import <Foundation/Foundation.h>
 #import "Fraction.h"
 #import "Calculator.h"
+#import "ExtendDemo.h"
+#import "Reatangle.h"
 
 
 BOOL isSame(int num1, int num2) {
@@ -33,11 +35,13 @@ int main(int argc, const char *argv[]) {
         int sum = 25 + 10;
         NSLog(@"Hello, World! \n Hello Object-C, sum=%i", sum);
     }
-    NSLog(@"Number same-> %@", boolString(isSame(10, 10)));
+//    NSLog(@"Number same-> %@", boolString(isSame(10, 10)));
 
 //    [Fraction main];
 //    [Calculator main];
-    [Calculator main2];
+//    [Calculator main2];
+    [ClassB main];
+//    [Square main];
 
     return 0;
 
