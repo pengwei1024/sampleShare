@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.apkfuns.hencodersample.work.BubbleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="5dp"
+        android:text="Hello BubbleView"
+        app:bubbleColor="#ffaaff"
+        android:textSize="16sp"/>
+
+    <com.apkfuns.hencodersample.work.BubbleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="15dp"
+        android:text="Draw the specified arc, which will be scaled to fit inside the specified oval.If the start angle is negative or >= 360, the start angle is treated as start angle modulo 360.If the sweep angle is >= 360, then the oval is drawn completely. Note that this differs slightly from SkPath::arcTo, which treats the sweep angle modulo 360. If the sweep angle is negative, the sweep angle is treated as sweep angle modulo 360"
+        app:bubbleColor="#000000"
+        android:textColor="#ffffff"
+        android:textSize="13sp"/>
+
+    <com.apkfuns.hencodersample.chart.PieChart
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
