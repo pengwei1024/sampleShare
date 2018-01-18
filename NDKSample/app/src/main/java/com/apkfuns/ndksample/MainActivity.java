@@ -1,10 +1,14 @@
 package com.apkfuns.ndksample;
 
+import android.support.annotation.Keep;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private int second = 0;
+    private TextView tv;
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -17,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
+        tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
     }
 
@@ -26,4 +30,12 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+    public native void startTicks();
+    public native void StopTicks();
+
+    @Keep
+    private void updateTimer() {
+        tv.setText("时间: " + (++second));
+    }
 }
