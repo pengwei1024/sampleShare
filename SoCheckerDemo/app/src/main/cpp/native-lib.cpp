@@ -3,46 +3,18 @@
 #include <malloc.h>
 #include <cstring>
 #include "android/log.h"
+#include "pthread.h"
 
 #define TAG "SoChecker"
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,TAG ,__VA_ARGS__)
 
-int checkSignature(JNIEnv *pEnv);
-
-jint JNI_OnLoad(JavaVM *vm, void *reserved) {
-    LOGD("JNI_OnLoad");
-    JNIEnv *env;
-    if (vm->GetEnv((void **) (&env), JNI_VERSION_1_6) != JNI_OK) {
-        return -1;
-    }
-    // RELEASE_MODE这个宏是通过编译脚本设定的，如果是release模式，
-    // 则RELEASE_MODE=1，否则为0或者未定义
-#ifdef RELEASE_MODE
-    if (RELEASE_MODE == 1) {
-        if (checkSignature(env) != JNI_TRUE) {
-            LOGD("The app signature is NOT correct, please check the apk signture. ");
-            return -1;
-        } else {
-            LOGD("The app signature is correct.");
-        }
-    } else {
-        LOGD("debug mode");
-    }
-#endif
-    LOGD("JNI_OnLoad finish");
-    return JNI_VERSION_1_6;
-}
-
-int checkSignature(JNIEnv *env) {
-    return 1;
-}
 
 void ByteToHexStr2(const char *source, char *dest, int sourceLen) {
     char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                         'A', 'B', 'C', 'D', 'E', 'F'};
     int lowByte, highByte;
     for (int i = 0; i < sourceLen; i++) {
-        highByte = source[i] >> 4 & 0xf;
+        highByte = source[i] >> 4 & 0x0f;
         lowByte = source[i] & 0x0f;
         // LOGD("i=%d, h=%d, l=%d", i, highByte, lowByte);
         dest[i * 2] = hexDigits[highByte];
@@ -132,4 +104,40 @@ extern "C" JNIEXPORT jstring JNICALL
 Java_com_apkfuns_socheckerdemo_MainActivity_getSignature(JNIEnv *env, jobject instance,
                                                          jobject context) {
     return loadSignature(env, context);
+}
+
+
+void checkSignature(JNIEnv *env) {
+    // RELEASE_MODE这个宏是通过编译脚本设定的，如果是release模式，
+    // 则RELEASE_MODE=1，否则为0或者未定义
+#ifdef RELEASE_MODE
+    if (RELEASE_MODE == 1) {
+        jclass appClass = env->FindClass("com/apkfuns/socheckerdemo/App");
+        jmethodID getContextMethod = env->GetStaticMethodID(appClass, "getContext",
+                                                            "()Landroid/content/Context;");
+        jobject context = env->CallStaticObjectMethod(appClass, getContextMethod);
+        jstring sign = loadSignature(env, context);
+        if (strcmp("DF3F2288139E1673EB4A2899E6570C36", env->GetStringUTFChars(sign, 0)) != 0) {
+            // 抛出异常
+            env->ExceptionClear();
+            jclass newExcCls = env->FindClass("java/lang/IllegalArgumentException");
+            env->ThrowNew(newExcCls, "SoChecker Signature Error");
+            return;
+        }
+        LOGD("The app signature is correct.");
+    } else {
+        LOGD("debug mode");
+    }
+#endif
+}
+
+jint JNI_OnLoad(JavaVM *vm, void *reserved) {
+    LOGD("JNI_OnLoad");
+    JNIEnv *env;
+    if (vm->GetEnv((void **) (&env), JNI_VERSION_1_6) != JNI_OK) {
+        return -1;
+    }
+    checkSignature(env);
+    LOGD("JNI_OnLoad finish");
+    return JNI_VERSION_1_6;
 }
