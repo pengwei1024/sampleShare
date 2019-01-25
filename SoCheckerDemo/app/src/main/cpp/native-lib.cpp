@@ -37,30 +37,18 @@ int checkSignature(JNIEnv *env) {
     return 1;
 }
 
-void ByteToHexStr(const char *source, char *dest, int sourceLen) {
-    short i;
-    char highByte, lowByte;
-
-    for (i = 0; i < sourceLen; i++) {
-        highByte = source[i] >> 4;
+void ByteToHexStr2(const char *source, char *dest, int sourceLen) {
+    char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                        'A', 'B', 'C', 'D', 'E', 'F'};
+    int lowByte, highByte;
+    for (int i = 0; i < sourceLen; i++) {
+        highByte = source[i] >> 4 & 0xf;
         lowByte = source[i] & 0x0f;
-        highByte += 0x30;
-
-        if (highByte > 0x39) {
-            dest[i * 2] = highByte + 0x07;
-        } else {
-            dest[i * 2] = highByte;
-        }
-
-        lowByte += 0x30;
-        if (lowByte > 0x39) {
-            dest[i * 2 + 1] = lowByte + 0x07;
-        } else {
-            dest[i * 2 + 1] = lowByte;
-        }
+        // LOGD("i=%d, h=%d, l=%d", i, highByte, lowByte);
+        dest[i * 2] = hexDigits[highByte];
+        dest[i * 2 + 1] = hexDigits[lowByte];
     }
 }
-
 
 jstring ToMd5(JNIEnv *env, jbyteArray source) {
     // MessageDigest类
@@ -87,7 +75,7 @@ jstring ToMd5(JNIEnv *env, jbyteArray source) {
     memset(char_result, 0, length);
 
     // 将byte数组转换成16进制字符串，发现这里不用强转，jbyte和unsigned char应该字节数是一样的
-    ByteToHexStr((const char *) byte_array_elements, char_result, intArrayLength);
+    ByteToHexStr2((const char *) byte_array_elements, char_result, intArrayLength);
     // 在末尾补\0
     *(char_result + intArrayLength * 2) = '\0';
 
@@ -96,7 +84,6 @@ jstring ToMd5(JNIEnv *env, jbyteArray source) {
     env->ReleaseByteArrayElements(objArraySign, byte_array_elements, JNI_ABORT);
     // 释放指针使用free
     free(char_result);
-
     return stringResult;
 }
 
