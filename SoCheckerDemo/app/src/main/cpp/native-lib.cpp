@@ -106,13 +106,19 @@ Java_com_apkfuns_socheckerdemo_MainActivity_getSignature(JNIEnv *env, jobject in
     return loadSignature(env, context);
 }
 
+JavaVM *javaVM;
+static jclass appClass = NULL;
 
-void checkSignature(JNIEnv *env) {
+void *checkSignature(void *arg) {
+    LOGD("checkSignature %s", (char *) arg);
+
     // RELEASE_MODE这个宏是通过编译脚本设定的，如果是release模式，
     // 则RELEASE_MODE=1，否则为0或者未定义
 #ifdef RELEASE_MODE
+    //通过JavaVM关联当前线程，获取当前线程的JNIEnv
+    JNIEnv *env = NULL;
+    javaVM->AttachCurrentThread(&env, NULL);
     if (RELEASE_MODE == 1) {
-        jclass appClass = env->FindClass("com/apkfuns/socheckerdemo/App");
         jmethodID getContextMethod = env->GetStaticMethodID(appClass, "getContext",
                                                             "()Landroid/content/Context;");
         jobject context = env->CallStaticObjectMethod(appClass, getContextMethod);
@@ -122,22 +128,33 @@ void checkSignature(JNIEnv *env) {
             env->ExceptionClear();
             jclass newExcCls = env->FindClass("java/lang/IllegalArgumentException");
             env->ThrowNew(newExcCls, "SoChecker Signature Error");
-            return;
+        } else {
+            LOGD("The app signature is correct.");
         }
-        LOGD("The app signature is correct.");
     } else {
         LOGD("debug mode");
     }
+    if (appClass != NULL) {
+        env->DeleteGlobalRef(appClass);
+    }
+    //解除关联
+    javaVM->DetachCurrentThread();
 #endif
+    //退出线程
+    pthread_exit((void *) 0);
 }
+
 
 jint JNI_OnLoad(JavaVM *vm, void *reserved) {
     LOGD("JNI_OnLoad");
+    javaVM = vm;
     JNIEnv *env;
     if (vm->GetEnv((void **) (&env), JNI_VERSION_1_6) != JNI_OK) {
         return -1;
     }
-    checkSignature(env);
+    appClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("com/apkfuns/socheckerdemo/App")));
+    pthread_t tid;
+    pthread_create(&tid, NULL, checkSignature, (void *) "checkSignature");
     LOGD("JNI_OnLoad finish");
     return JNI_VERSION_1_6;
 }

@@ -1,5 +1,6 @@
 - [Android so库防客户端破解的解决方案](https://juejin.im/post/5c4082b16fb9a049fa100ab8?utm_source=gold_browser_extension)
-
+- [JNI 之 pthread 多线程使用](https://blog.csdn.net/wanxiaofan/article/details/79152066)
+- [Android JNI出坑指南](https://www.itcodemonkey.com/article/1853.html)
 
 **注意下gradle设置宏cFlags和cppFlags区别**
 ```
